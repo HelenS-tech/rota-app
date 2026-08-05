@@ -257,6 +257,19 @@ async function ensureClaimScheduleExists(year, month) {
   }
 }
 
+async function startApp() {
+  await ensureClaimScheduleExists(currentYear, currentMonth);
+  await loadClaimSchedule();
+  await loadMonthRelease();
+
+  updateClaimStatus();
+  updateFinishedButton();
+
+  await loadShiftsFromSupabase();
+  updateCancelledShiftAlert();
+  updateUnclaimedShiftAlert();
+}
+
 async function loadClaimSchedule() {
   const { data, error } = await supabaseClient
     .from("claim_schedule")
@@ -858,6 +871,22 @@ function renderMainMonthView() {
     await loadShiftsFromSupabase();
   });
 
+  nextBtn.addEventListener("click", async () => {
+    currentMonth++;
+
+    if (currentMonth > 11) {
+      currentMonth = 0;
+      currentYear++;
+    }
+
+    selectedWeek = 1;
+
+    await loadClaimSchedule();
+    updateClaimStatus();
+    updateFinishedButton();
+    await loadShiftsFromSupabase();
+  });
+
   const calendarGrid = document.createElement("div");
   calendarGrid.className = "calendar-grid";
   const weekDays = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
@@ -1346,15 +1375,11 @@ document
   .addEventListener("click", markFinishedChoosing);
 
 async function startApp() {
-  await ensureClaimScheduleExists(currentYear, currentMonth);
   await loadClaimSchedule();
   await loadMonthRelease();
-
   updateClaimStatus();
   updateFinishedButton();
-
   await loadShiftsFromSupabase();
-
   updateCancelledShiftAlert();
   updateUnclaimedShiftAlert();
 }
