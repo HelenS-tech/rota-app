@@ -441,7 +441,7 @@ function updateUnclaimedShiftAlert() {
     const isWithinNext10Days =
       shiftDate >= today && shiftDate <= tenDaysFromNow;
 
-    const isNotFull = shift.claimedBy.length < shift.capacity;
+    const isNotFull = shift.claimedBy.length = 0;
 
     return isWithinNext10Days && isNotFull;
   });
