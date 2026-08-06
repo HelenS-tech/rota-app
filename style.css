@@ -907,3 +907,14 @@ select {
     padding: 0 1px;
   }
 }
+
+@media (max-width: 600px) {
+  .overview-shift-bar {
+    font-size: 0;
+  }
+
+  .overview-shift-bar::after {
+    content: attr(data-initials);
+    font-size: 10px;
+  }
+}
