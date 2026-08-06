@@ -536,9 +536,7 @@ function renderShifts() {
     await loadShiftsFromSupabase();
   });
 
-  document
-  .getElementById("nextMonth")
-  .addEventListener("click", async () => {
+  document.getElementById("nextMonth").addEventListener("click", async () => {
     currentMonth++;
 
     if (currentMonth > 11) {
@@ -557,7 +555,7 @@ function renderShifts() {
     updateFinishedButton();
 
     await loadShiftsFromSupabase();
-      });
+  });
 
   document
     .getElementById("overviewBtn")
@@ -946,9 +944,21 @@ function renderMainMonthView() {
       line.className = `overview-shift-bar ${shift.role.toLowerCase()}`;
 
       const claimText =
-        shift.claimedBy.length > 0 ? shift.claimedBy.join(", ") : "";
+        shift.claimedBy.length === 0
+          ? ""
+          : shift.claimedBy.length === 1
+            ? shift.claimedBy[0].split(" ")[0]
+            : shift.claimedBy
+                .map((name) =>
+                  name
+                    .split(" ")
+                    .map((part) => part.charAt(0).toUpperCase())
+                    .join(""),
+                )
+                .join(" + ");
 
       line.textContent = claimText;
+      line.title = shift.claimedBy.join(", ");
 
       cell.appendChild(line);
     });
