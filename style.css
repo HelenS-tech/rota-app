@@ -915,6 +915,6 @@ select {
 
   .overview-shift-bar::after {
     content: attr(data-initials);
-    font-size: 10px;
+    font-size: 8px;
   }
 }
