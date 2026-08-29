@@ -910,7 +910,7 @@ select {
 
 @media (max-width: 600px) {
   .overview-shift-bar {
-    font-size: 0;
+    font-size: 0 !important;
   }
 
   .overview-shift-bar::after {
