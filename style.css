@@ -909,12 +909,7 @@ select {
 }
 
 @media (max-width: 600px) {
-  .overview-shift-bar {
-    font-size: 0 !important;
-  }
-
-  .overview-shift-bar::after {
-    content: attr(data-initials);
-    font-size: 8px;
-  }
+    .overview-shift-bar {
+        font-size: 8px !important;
+    }
 }
