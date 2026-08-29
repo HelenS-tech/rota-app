@@ -960,17 +960,6 @@ function renderMainMonthView() {
       line.textContent = claimText;
       line.title = shift.claimedBy.join(", ");
 
-      const initials = shift.claimedBy
-        .map((name) =>
-          name
-            .split(" ")
-            .map((part) => part.charAt(0).toUpperCase())
-            .join(""),
-        )
-        .join(" + ");
-
-      line.dataset.initials = initials;
-
       cell.appendChild(line);
     });
     if (dayShifts.length > 0) {
