@@ -1,95 +1,109 @@
 # SmartShift
 
-A simple, mobile-friendly rota tool designed to make it easy for staff to view, understand, and claim shifts.
+A simple, mobile-friendly rota tool designed to make it easy for staff to view, understand and claim shifts.
 
-Built as a lightweight alternative to paper rotas and overly complex scheduling systems.
+Originally developed as a lightweight alternative to paper rotas and overly complex scheduling systems, SmartShift has since evolved into a live rota system used by staff within a local hospitality business.
 
 ---
 
 ## 🚀 Features
 
-- 📅 **Monthly rota view**
-- 📆 **Weekly tabs** for easy navigation
-- 📊 **Visual availability overview** (calendar map)
-- 👥 **Shift claiming system**
-- 🔐 **Simple PIN-based staff login**
-- 🎨 **Colour-coded shift status**
-  - Grey = Available
-  - Amber = Partially filled
-  - Red = Full
-- 📈 **Progress bars** showing how full each shift is
-- 📱 **Mobile-first design**
+* 📅 Monthly rota view
+* 📆 Weekly tabs for easy navigation
+* 📊 Visual availability overview
+* 👥 Shift claiming and cancellation
+* 🔐 PIN-based staff login
+* 🎨 Colour-coded shift status
+* 📈 Progress bars showing shift capacity
+* 📱 Mobile-first responsive design
+* 🌐 Shared rota data using Supabase
+* 👥 Multi-user access across devices
+* 🗓️ Month-to-month navigation
+* 👤 User-specific shift information
 
 ---
 
 ## 🧠 How It Works
 
-- Shifts are generated dynamically based on:
-  - Day of the week
-  - Monthly patterns (e.g. Wednesday events)
-  - Special cases (e.g. first Monday biker night)
+Shifts are generated and displayed according to the rota structure and available dates.
 
-- Staff can:
-  - Select their name
-  - Enter a PIN
-  - Claim or cancel shifts
+Staff can:
 
-- The app stores the selected user locally using `localStorage`.
+* Select their name
+* Enter their PIN
+* View available shifts
+* Claim shifts
+* Cancel shifts they have previously claimed
+* Navigate between rota months
 
----
+Shift information is stored using Supabase so that changes are available across devices rather than being stored only locally.
 
-## ⚠️ Current Limitations
-
-- ❌ No shared database (not synced between users)
-- ❌ Changes are only visible on the same device
-- ❌ No admin controls yet
-
-This version is a **prototype** to test usability and concept.
-
----
-
-## 💡 Future Improvements
-
-- 🌐 Shared data (Firebase or backend)
-- 👨‍💼 Admin dashboard
-- 📊 Analytics (unfilled shifts, trends)
-- 🔔 Notifications/reminders
-- 👥 Multi-user sync in real time
+The application also uses `localStorage` where appropriate to retain user information on the device and improve the user experience.
 
 ---
 
 ## 🛠️ Tech Stack
 
-- HTML
-- CSS (custom styling, responsive layout)
-- JavaScript (vanilla)
+* HTML
+* CSS
+* JavaScript
+* Supabase
+* Git / GitHub
+* GitHub Pages
+* Visual Studio Code
 
-No frameworks — intentionally lightweight and simple.
+No JavaScript framework is currently used, keeping the application lightweight and easy to maintain.
+
+---
+
+## 🔧 Ongoing Development
+
+SmartShift continues to be developed based on real-world use and staff feedback.
+
+Development has included:
+
+* Improving the mobile interface
+* Troubleshooting differences between desktop and mobile behaviour
+* Improving database access and security
+* Managing shift ownership and cancellation behaviour
+* Adding additional rota months and shift dates
+* Improving how multiple staff members are displayed on shifts
+
+Future development may include:
+
+* Administration controls
+* Improved authentication
+* Shift swapping
+* Notifications and reminders
+* Additional reporting and rota-management tools
 
 ---
 
 ## 🎯 Goal
 
-To create a rota system that is:
-- Easy to understand
-- Quick to use on a phone
-- Visually clear
-- More reliable than paper rotas
+The aim of SmartShift is to provide a rota system that is:
+
+* Easy to understand
+* Quick to use on a phone
+* Visually clear
+* Accessible to multiple staff members
+* Easier to maintain than a paper rota
+* Flexible enough to develop as the business requirements change
 
 ---
 
 ## 📸 Screenshots
 
-(Add screenshots here if you want)
+Suggested screenshots:
+
+* Mobile rota view
+* Desktop rota view
+* Shift claiming
+* Filled and partially filled shifts
+* Month navigation
 
 ---
 
 ## 👨‍💻 Author
 
-Built by Helen Louise
-
----
-
-## 📄 License
-
-Open source / personal project
+Built and maintained by Helen Louise Smith.
